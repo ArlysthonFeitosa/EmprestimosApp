@@ -7,6 +7,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.arlysfeitosa.emprestimosapp.R
 import com.arlysfeitosa.emprestimosapp.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -16,12 +17,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        button_loanpage.setOnClickListener(this)
+
         mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         observer()
     }
     fun observer(){}
 
     override fun onClick(v: View) {
+        if(v == button_loanpage){
+            startActivity(Intent(applicationContext, LoanActivity::class.java))
+        }
     }
-
 }

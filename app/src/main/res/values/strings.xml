@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EmprestimosAPP</string>
+    <string name="app_name">Empréstimos</string>
 
     <string-array name="spinner_aulas">
         <item>1ª Aula</item>
