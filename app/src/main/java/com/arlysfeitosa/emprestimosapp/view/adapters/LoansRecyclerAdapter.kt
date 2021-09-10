@@ -70,6 +70,16 @@ class LoansRecyclerAdapter : RecyclerView.Adapter<LoansRecyclerViewHolder>() {
 
     fun attachListener(listener: LoanListener){
         this.mListener = listener
+        val loan = LoanModel()
+        loan.id = 0
+        loan.date = "00/00/0000"
+        loan.finalClass = "3"
+        loan.initialClass = "1"
+        loan.forWhom = "Arlysthon"
+        loan.isReturned = true
+        loan.objectToLoan = "Notebook 10"
+
+        this.mList = arrayListOf(loan)
     }
 
     fun updateList(list: List<LoanModel>): Boolean{
