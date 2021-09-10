@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:padding="22dp"
+    tools:context=".view.LoanActivity">
+
+    <EditText
+        android:id="@+id/edit_text_whom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_profile_green"
+        android:drawablePadding="6dp"
+        android:hint="Para quem?"
+        android:inputType="textCapWords"
+        android:maxLength="15"
+        android:textColor="@color/green"
+        android:textColorHint="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_object" />
+
+    <EditText
+        android:id="@+id/edit_text_object"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:drawableStart="@drawable/ic_object_green"
+        android:drawablePadding="6dp"
+        android:hint="Objeto"
+        android:inputType="textCapWords"
+        android:maxLength="15"
+        android:textColor="@color/green"
+        android:textColorHint="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_emprestimo" />
+
+    <TextView
+        android:id="@+id/textView_emprestimo_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Empréstimo"
+        android:textColor="@color/green"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_emprestimo"
+        app:layout_constraintStart_toStartOf="@+id/spinner_emprestimo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_emprestimo"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:background="@drawable/shape_spinner_background"
+        android:dropDownSelector="@color/green"
+        android:entries="@array/spinner_aulas"
+        android:popupBackground="@drawable/shape_spinner_background"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_entrega"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_emprestimo_spinner" />
+
+    <TextView
+        android:id="@+id/textView_entrega_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Entrega"
+        android:textColor="@color/green"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_entrega"
+        app:layout_constraintStart_toStartOf="@+id/spinner_entrega"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_entrega"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:background="@drawable/shape_spinner_background"
+        android:dropDownSelector="@color/green"
+        android:entries="@array/spinner_aulas"
+        android:popupBackground="@drawable/shape_spinner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner_emprestimo"
+        app:layout_constraintTop_toBottomOf="@+id/textView_entrega_spinner" />
+
+    <Button
+        android:id="@+id/button_fazerEmprestimo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_button_rounded"
+        android:fontFamily="@font/anton"
+        android:text="Fazer Empréstimo"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_whom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

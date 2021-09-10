@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EmprestimosAPP</string>
+
+    <string-array name="spinner_aulas">
+        <item>1ª Aula</item>
+        <item>2ª Aula</item>
+        <item>3ª Aula</item>
+        <item>4ª Aula</item>
+        <item>5ª Aula</item>
+        <item>6ª Aula</item>
+        <item>7ª Aula</item>
+        <item>8ª Aula</item>
+        <item>9ª Aula</item>
+    </string-array>
+
+</resources>
