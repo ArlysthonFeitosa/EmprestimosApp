@@ -26,4 +26,7 @@ class LoanModel{
     @ColumnInfo(name = "finalClass")
     var finalClass: String = ""
 
+    @ColumnInfo(name = "isReturned")
+    var isReturned: Boolean = false
+
 }
