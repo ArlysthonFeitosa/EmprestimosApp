@@ -1,15 +1,19 @@
 package com.arlysfeitosa.emprestimosapp.view
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.arlysfeitosa.emprestimosapp.R
 import com.arlysfeitosa.emprestimosapp.services.listeners.LoanListener
+import com.arlysfeitosa.emprestimosapp.services.model.LoanModel
 import com.arlysfeitosa.emprestimosapp.view.adapters.LoansRecyclerAdapter
 import com.arlysfeitosa.emprestimosapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,17 +27,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         button_loanpage.setOnClickListener(this)
 
         mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
         loadListener()
         loadRecycler()
         observer()
 
         mViewModel.load()
-    }
 
+    }
 
     fun loadListener(){
         mListener = object : LoanListener {
@@ -62,6 +66,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    fun updateList(loansList: List<LoanModel>){
+        mLoansAdapter.updateList(loansList)
+    }
+
     fun loadRecycler(){
         recycler_loans.layoutManager = LinearLayoutManager(this)
         recycler_loans.adapter = mLoansAdapter
@@ -74,6 +82,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun observer(){}
-
+    fun observer(){
+        mViewModel.allLoans.observe(this, Observer {
+            updateList(it)
+        })
+    }
 }

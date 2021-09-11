@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Objeto"
-            android:textColor="@color/gray"
+            android:textColor="#CCFFD3"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quem Pegou"
-            android:textColor="@color/gray"
+            android:textColor="#7FFFAE"
             app:layout_constraintStart_toStartOf="@+id/textview_object"
             app:layout_constraintTop_toBottomOf="@id/textview_object" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="1 - 2"
-            android:textColor="@color/gray"
+            android:textColor="#056E2D"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/switch_returned"
