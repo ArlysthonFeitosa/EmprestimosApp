@@ -23,33 +23,31 @@ class LoansRecyclerAdapter : RecyclerView.Adapter<LoansRecyclerViewHolder>() {
 
     override fun onBindViewHolder(holder: LoansRecyclerViewHolder, position: Int) {
         val loan = mList[position]
-        holder.bindData(loan)
 
         synchronized(this){
             holder.isReturned.setOnCheckedChangeListener{ _, isChecked ->
                 if(isChecked){
-                    if(loan.isReturned == false){
+                    if(!loan.isReturned){
                         mListener.onCompleteClick(loan.id)
+                        loan.isReturned = true
                         try{
                             notifyItemChanged(holder.adapterPosition)
                         }catch (e:Exception){
                             mListener.onUndoClick(loan.id)
+                            loan.isReturned = false
                         }
                     }
-                    else{
-                        holder.isReturned.isChecked = true
-                    }
+
                 } else if(!isChecked){
-                    if(loan.isReturned == true){
+                    if(loan.isReturned){
                         mListener.onUndoClick(loan.id)
+                        loan.isReturned = false
                         try{
                             notifyItemChanged(holder.adapterPosition)
                         }catch (e:Exception){
                             mListener.onCompleteClick(loan.id)
+                            loan.isReturned = true
                         }
-                    }
-                    else{
-                        holder.isReturned.isChecked = false
                     }
                 }
             }
@@ -62,6 +60,7 @@ class LoansRecyclerAdapter : RecyclerView.Adapter<LoansRecyclerViewHolder>() {
             }
         }
 
+        holder.bindData(loan)
     }
 
     override fun getItemCount(): Int {
@@ -70,18 +69,6 @@ class LoansRecyclerAdapter : RecyclerView.Adapter<LoansRecyclerViewHolder>() {
 
     fun attachListener(listener: LoanListener){
         this.mListener = listener
-
-        /*
-        val loan = LoanModel()
-        loan.id = 0
-        loan.date = "00/00/0000"
-        loan.finalClass = "3"
-        loan.initialClass = "1"
-        loan.forWhom = "Arlysthon"
-        loan.isReturned = true
-        loan.objectToLoan = "Notebook 10"
-
-        this.mList = arrayListOf(loan, loan, loan) */
     }
 
     fun updateList(list: List<LoanModel>): Boolean{

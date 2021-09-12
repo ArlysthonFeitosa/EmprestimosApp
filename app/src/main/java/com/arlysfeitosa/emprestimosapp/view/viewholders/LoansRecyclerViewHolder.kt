@@ -23,6 +23,7 @@ class LoansRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
         this.mObject.text = loan.objectToLoan
         this.mForWhom.text = loan.forWhom
         this.mPeriod.text = "${loan.initialClass} - ${loan.finalClass}"
+        this.isReturned.isChecked = loan.isReturned
         mLoanId = loan.id
     }
 }

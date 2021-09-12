@@ -48,6 +48,7 @@ class LoanActivity : AppCompatActivity(), View.OnClickListener{
         if(v.id == R.id.button_fazerEmprestimo){
             if(checkFields()){
                 mViewModel.saveLoan(makeLoanModel())
+                finish()
             }
         }
     }
