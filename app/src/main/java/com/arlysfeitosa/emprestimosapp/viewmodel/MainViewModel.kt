@@ -31,10 +31,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun getLoanById(id: Int): LoanModel{
-        return LoanModel()//mRepository.getLoanById(id)
+        return mRepository.getLoanById(id)
     }
 
     fun load(){
-        mRepository.getAllLoans()
+        mAllLoans.value = mRepository.getAllLoans()
     }
 }

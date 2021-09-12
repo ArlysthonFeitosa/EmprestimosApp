@@ -22,7 +22,7 @@ class Repository(context: Context) {
     fun getAllLoans():List<LoanModel>{
         return mLoansDataBase.getAllLoans()
     }
-
+;
     fun getLoanById(id:Int): LoanModel{
         return mLoansDataBase.getLoanById(id)
     }

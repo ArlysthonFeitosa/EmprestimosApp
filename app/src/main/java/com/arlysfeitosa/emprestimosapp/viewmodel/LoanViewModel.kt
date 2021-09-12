@@ -10,6 +10,6 @@ class LoanViewModel(application: Application): AndroidViewModel(application) {
     private var mRepository = Repository(application.applicationContext)
 
     fun saveLoan(loan: LoanModel){
-        //mRepository.saveLoan(loan)
+        mRepository.saveLoan(loan)
     }
 }

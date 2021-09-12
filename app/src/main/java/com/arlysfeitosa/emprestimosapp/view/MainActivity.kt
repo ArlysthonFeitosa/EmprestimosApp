@@ -36,7 +36,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         observer()
 
         mViewModel.load()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        mViewModel.load()
     }
 
     fun loadListener(){

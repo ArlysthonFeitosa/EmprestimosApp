@@ -15,7 +15,7 @@ abstract class LoansDataBase(): RoomDatabase() {
         private lateinit var INSTANCE: LoansDataBase
 
         fun getDataBase(context: Context): LoansDataBase {
-            if (::INSTANCE.isInitialized){
+            if (!::INSTANCE.isInitialized){
                 synchronized(LoansDataBase::class) {
                     INSTANCE = Room.databaseBuilder(
                         context,

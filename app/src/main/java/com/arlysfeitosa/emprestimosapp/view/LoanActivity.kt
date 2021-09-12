@@ -27,7 +27,7 @@ class LoanActivity : AppCompatActivity(), View.OnClickListener{
     fun makeLoanModel(): LoanModel{
         val loan = LoanModel()
         loan.forWhom = edit_text_whom.text.toString()
-        loan.objectToLoan = edit_text_object.toString()
+        loan.objectToLoan = edit_text_object.text.toString()
         loan.initialClass = (spinner_emprestimo.selectedItemId.toInt() + 1).toString()
         loan.finalClass = (spinner_entrega.selectedItemId.toInt() + 1).toString()
         loan.date = "11/09/2021"
