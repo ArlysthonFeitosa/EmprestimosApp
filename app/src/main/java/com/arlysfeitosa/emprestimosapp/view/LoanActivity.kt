@@ -30,7 +30,7 @@ class LoanActivity : AppCompatActivity(), View.OnClickListener{
         loan.objectToLoan = edit_text_object.text.toString()
         loan.initialClass = (spinner_emprestimo.selectedItemId.toInt() + 1).toString()
         loan.finalClass = (spinner_entrega.selectedItemId.toInt() + 1).toString()
-        loan.date = "11/09/2021"
+        loan.date = "00/00/0000"
 
         return loan
     }

@@ -22,7 +22,7 @@ class LoansRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
     fun bindData(loan: LoanModel){
         this.mObject.text = loan.objectToLoan
         this.mForWhom.text = loan.forWhom
-        this.mPeriod.text = "${loan.initialClass} - ${loan.finalClass}"
+        this.mPeriod.text = "${loan.initialClass}ª - ${loan.finalClass}ª"
         this.isReturned.isChecked = loan.isReturned
         mLoanId = loan.id
     }

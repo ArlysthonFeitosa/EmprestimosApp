@@ -10,37 +10,53 @@
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="110dp"
         android:paddingTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/text_titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/line"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:typeface="normal" />
+            android:typeface="normal"
+            tools:ignore="RelativeOverlap" />
+
+        <Button
+            android:id="@+id/button_loanpage"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/shape_button_gradient"
+            android:text="Emprestar"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBottom="@+id/line"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_marginEnd="9dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
             app:srcCompat="@drawable/app_logo" />
 
         <View
@@ -56,20 +72,6 @@
 
 
 
-    <Button
-        android:id="@+id/button_loanpage"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Emprestar"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/shape_button_gradient"
-        android:layout_marginHorizontal="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_loans"
@@ -78,6 +80,6 @@
         android:layout_margin = "15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_loanpage" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
