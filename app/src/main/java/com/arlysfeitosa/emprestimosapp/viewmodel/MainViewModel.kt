@@ -16,6 +16,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun returnLoan(id: Int){
         val loan = getLoanById(id)
+
         loan.isReturned = true
         mRepository.updateloan(loan)
     }
@@ -35,6 +36,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun load(){
-        mAllLoans.value = mRepository.getAllLoans()
+        mAllLoans.value = mRepository.getAllLoans().asReversed() //Sort list as reversed
     }
 }
