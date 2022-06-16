@@ -8,6 +8,8 @@
 
 - MVVM + LiveData
 - Repository
+- Singleton
+- DAO
 
 ## Banco de dados
 
